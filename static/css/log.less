@@ -1,0 +1,205 @@
+@body_width: 750px;
+@main_width: 600px;
+@sidebar_width: 120px;
+
+// http://colorschemedesigner.com/#0341TddoouDvy
+@title_color: #999999;
+@subtitle_color: #CCCCCC;
+@h4_color: #668855;
+@h3_color: #DDDDDD / 2;
+@h2_color: @h3_color / 2;
+@date_color: @h3_color;
+
+@date_color: #000000;
+@link_color: #946965;
+
+// @post_bg_color: #AD9593;
+// @page_bg_color: #AD9C9B;
+
+@post_bg_color: #FFFFFF;
+@page_bg_color: #FFFFFF;
+@pre_bg_color: #FFFFFF;
+@pre_border_color: #303030;
+
+@title_font: 'Helvetica';
+@body_font: Verdana;
+
+@slash0_col: #C27872;
+@slash1_col: #C29972;
+@slash2_col: #477177;
+@slash3_col: #579562;
+
+@child-dir_col: #81B3BA;
+
+body {
+	width: @body_width;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 1.5em;
+	font-size: 10pt;
+	font-family: @body_font;
+	background-color: @page_bg_color;
+}
+
+div#main {
+    float: left;
+    width: @main_width;
+
+    h3.post-date {
+        font-size: 8pt;
+        color: @date_color;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    div.post {
+        padding-bottom: 5em;
+        // background-color: @post_bg_color;
+
+        h2.post-title, div.date {
+            font-size: 16px;
+        }
+
+        div.post-heading {
+            // background-color: #eeeeee;
+            // border: 1px solid #999;
+            // padding:5px;
+            margin-bottom:2em;
+        }
+
+        div.post-body {
+            padding-left: 1em;
+        }
+
+        h2.post-title {
+            color: @h2_color;
+            font-family: @title_font;
+            margin: 0;
+            a {
+                color: @h2_color;
+                text-decoration: none;
+            }
+        }
+ 
+        div.post-footer {
+            margin-top: 4em;
+            font-size: 8pt;
+            text-align: right;
+        }
+    }
+}
+
+div#sidebar {
+    float: right;
+    width: @sidebar_width;
+    margin-left: 30px;
+}
+
+div#side-desc {
+    h2 {
+        margin:0;
+        margin-bottom:1em;
+        color: #999999;
+    }
+}
+
+div#footer {
+    clear: both;
+    width: @body_width;
+    font-size: 14pt;
+    color: #ddd;
+    text-align: center;
+    margin-bottom: 2em;
+
+    .important {
+        color: #999;
+    }
+}
+
+a {
+	color: @link_color;
+}
+
+#page-header {
+	a {
+		text-decoration: none;
+	}
+
+    #title,#smalltitle {
+        color: @title_color;
+        font-family: @title_font;
+        font-size: 60pt;
+        font-weight: bold;
+
+        margin-top: 1em;
+        margin-bottom: 0.25em;
+     
+        span.slash0 {
+            color: @slash0_col;
+        }
+
+        span.slash1 {
+            color: @slash1_col;
+        }
+
+        span.slash2 {
+            color: @slash2_col;
+        }
+
+        span.slash3 {
+            color: @slash3_col;
+        }
+         
+        span.child-dir {
+            color: @child-dir_col;
+        }      
+    }
+
+    #smalltitle {
+        font-size: 22pt;
+    }
+
+    #subtitle {
+        font-size: 12pt;
+        font-color: @subtitle_color;
+        margin-bottom: 5em;
+    }
+}
+
+h3 {
+    font-size: 12pt;
+	font-weight: normal;
+	color: @h3_color;
+}
+
+h4 {
+    font-size: 12pt;
+	font-weight: normal;
+    color: @h4_color;
+}
+
+// div.date {
+	// float: left;
+	// text-align: right;
+	// color: @date_color;
+	// margin: 44px 0 22px -125px;
+// }
+
+p.storyfoot {
+	font-size: .9em;
+	float: right;
+}
+
+.inline-code {
+	font-family: Monospace;
+}
+
+pre {
+	margin-left: 2em;
+	margin-right: 1em;
+	padding: 1em;
+	font-size: 10pt;
+	background-color: @pre_bg_color;
+	border: solid 1px @pre_border_color;
+}
+
