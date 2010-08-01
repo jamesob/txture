@@ -13,6 +13,12 @@ but it (should) work fine out of the box.
 
 ## Installation
 
+  1. Get Leiningen
+  2. ``git clone git@github.com:jamesob/txture.git``
+  3. ``cd txture; lein deps``
+  4. ``lein repl src/txture/core.clj``
+  5. Browse to localhost:8080 
+
 ## License
 
 Copyright (c) 2010 jamesob
