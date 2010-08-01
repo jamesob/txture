@@ -13,20 +13,20 @@ but it (should) work fine out of the box.
 
 ## Installation
 
-  1. Get Leiningen (Clojure not required)
-  2. Get txture
+1. Get Leiningen (Clojure not required)
+2. Get txture
 
-        $ git clone git@github.com:jamesob/txture.git
+    $ git clone git@github.com:jamesob/txture.git
 
-  3. Let ``lein`` gather dependencies.
+3. Let ``lein`` gather dependencies.
 
-        $ cd txture; lein deps
+    $ cd txture; lein deps
 
-  4. Run txture
+4. Run txture
 
-        $ lein repl src/txture/core.clj
+    $ lein repl src/txture/core.clj
 
-  5. Browse to localhost:8080 
+5. Browse to localhost:8080 
 
 ## License
 
