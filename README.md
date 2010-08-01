@@ -16,7 +16,7 @@ but it (should) work fine out of the box.
 1. Get Leiningen (Clojure not required)
 2. Get txture
 
-    <pre><code>$ git clone git@github.com:jamesob/txture.git</pre></code>
+    <code>$ git clone git@github.com:jamesob/txture.git</code>
 
 3. Let ``lein`` gather dependencies.
 
