@@ -37,11 +37,11 @@ Copyright (c) 2010 jamesob
 
 ## TODO
 
-  * SEO
-  * Comment module.
-    * Plugins?
-      * Twitter-integration
-      * Delicious
+  * Plugins?
+    * Comments
+      * Disqus?
+    * Twitter integration
+    * Delicious
   * Beter text-file parsing.
   * Non-blog pages?
 
