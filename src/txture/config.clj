@@ -1,6 +1,6 @@
 (ns txture.config)
 
-(def *num-posts-shown* 10)
+(def *num-posts-shown* 5)
 (def *author* "p. marlowe")
 (def *title* "snappy title")
 (def *subtitle* "")
@@ -8,7 +8,7 @@
 (def *description*
   "This is a web log, etc. Hire me.")
 (def *keywords* ; site-wide keywords
-  "detective fiction, philip marlowe, philip, marlowe")
+  "detective, philip marlowe, philip, marlowe")
 
 (def *posts-dir* "posts/")
 (def *posts-ext* ".txt")
