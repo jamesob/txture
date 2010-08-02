@@ -3,7 +3,7 @@
         ring.adapter.jetty
         txture.config)
   (:require [compojure.route :as route])
-  (:require [txture.mvc.controllers :as controllers]))
+  (:require [txture.mvc.controller :as controller]))
 
 (defroutes site
   (GET "/post/:id" [id] 
