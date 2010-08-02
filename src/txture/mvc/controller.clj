@@ -6,10 +6,10 @@
 
 (defn show-post [id]
   (println (str "showing " id))
-  (let [post (first (models/get-posts-by-id id))]
+  (let [post (first (model/get-posts-by-id id))]
     (views/show-post post)))
 
 (defn show-n-posts [n]
-  (let [posts (models/get-recent-posts n)]
+  (let [posts (model/get-recent-posts n)]
     (views/show-posts posts)))
 
