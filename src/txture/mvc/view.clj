@@ -132,7 +132,7 @@
 
   [:div html-content [:div#footer (gen-footer)]])
 
-;; fns to be used in `mvc.controllers`
+;; fns to be used in `mvc.controller`
 ;; -----------------------------------
 
 (defn show-posts

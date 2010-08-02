@@ -89,7 +89,7 @@
   [fileseq]
   (map #(postfile->struct %) fileseq))
 
-;; fns used in `mvc.controllers`
+;; fns used in `mvc.controller`
 ;; -----------------------------
 
 (defn get-posts-by-id
