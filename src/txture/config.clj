@@ -1,6 +1,5 @@
 (ns txture.config)
 
-(def *num-posts-shown* 5)
 (def *author* "p. marlowe")
 (def *title* "snappy title")
 (def *subtitle* "")
@@ -13,5 +12,7 @@
 (def *posts-dir* "posts/")
 (def *posts-ext* ".txt")
 (def *css-loc* "/css/log.css")
+
+(def *num-posts-shown* 6)
 
 
