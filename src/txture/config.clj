@@ -1,15 +1,14 @@
 (ns txture.config)
 
 (def *num-posts-shown* 10)
-(def *author* "jamesob")
-(def *title* "&Delta;t")
+(def *author* "p. marlowe")
+(def *title* "snappy title")
 (def *subtitle* "")
-(def *text-title* "delta t - james o'beirne")
+(def *text-title* "snappy title by philip marlowe")
 (def *description*
-  "A web log about programming, electronic music, and other 
-  things that interest me. I'll try to keep orthogonal topics separate.")
+  "This is a web log, etc. Hire me.")
 (def *keywords* ; site-wide keywords
-  "linux, clojure, python, ubuntu, arch, electronica, jamesob, james, o'beirne")
+  "detective fiction, philip marlowe, philip, marlowe")
 
 (def *posts-dir* "posts/")
 (def *posts-ext* ".txt")
