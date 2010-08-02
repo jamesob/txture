@@ -1,11 +1,14 @@
 (ns txture.mvc.models
   #^{:doc "We're using flatfile storage."}
-  (:use clojure.contrib.duck-streams
-        txture.config)
-  (:import [java.io File])
-  (:import [java.util.regex Pattern])
-  (:import [java.util Date])
-  (:import [java.text DateFormat]))
+  (:require [clojure.contrib.str-utils2 :as str-utils])
+  (:use 
+     clojure.contrib.duck-streams
+     txture.config)
+  (:import 
+     [java.io File]
+     [java.util.regex Pattern]
+     [java.util Date]
+     [java.text DateFormat]))
 
 (defstruct post
   :body
@@ -30,7 +33,7 @@
 (defn get-post-short-name
   [file]
   (let [p (.getPath file)
-        patt (Pattern/compile (str #"(\w+)" *posts-ext*))]
+        patt (Pattern/compile (str #"([\w-]+)" *posts-ext*))]
     (last (last (re-seq patt p)))))
 
 (defn get-matching-files-seq
@@ -44,6 +47,9 @@
   [id]
   (let [reg (Pattern/compile (str ".*/" id *posts-ext*))]
     (first (get-matching-files-seq reg))))
+
+;; fns that convert files to posts
+;; -------------------------------
 
 (defn postfile->struct
   "Transform a postfile into a post struct for internal use."
@@ -82,6 +88,9 @@
   "Convert a seq of files to a seq of post structs."
   [fileseq]
   (map #(postfile->struct %) fileseq))
+
+;; fns used in `mvc.controllers`
+;; -----------------------------
 
 (defn get-posts-by-id
   "Retrieve posts from disk, fill out a post structs, return them in a seq."
