@@ -1,4 +1,4 @@
-(ns txture.mvc.models
+(ns txture.mvc.model
   #^{:doc "We're using flatfile storage."}
   (:require [clojure.contrib.str-utils2 :as str-utils])
   (:use 

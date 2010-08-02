@@ -1,4 +1,4 @@
-(ns txture.mvc.views
+(ns txture.mvc.view
   (:use 
      txture.config
      hiccup.core
