@@ -1,7 +1,8 @@
 (ns txture.mvc.controllers
   (:use txture.config)
-  (:require [txture.mvc.views :as views])
-  (:require [txture.mvc.models :as models]))
+  (:require 
+     [txture.mvc.views :as views]
+     [txture.mvc.models :as models]))
 
 (defn show-post [id]
   (println (str "showing " id))

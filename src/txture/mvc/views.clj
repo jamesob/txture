@@ -1,7 +1,8 @@
 (ns txture.mvc.views
-  (:use txture.config
-        hiccup.core
-        hiccup.page-helpers))
+  (:use 
+     txture.config
+     hiccup.core
+     hiccup.page-helpers))
 
 ;; misc. utility fns
 ;; -----------------
