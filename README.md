@@ -26,7 +26,7 @@ but it (should) work fine out of the box.
 
         $ lein repl src/txture/core.clj
 
-5. Browse to localhost:8080 
+5. Browse to http://localhost:8080 
 
 ## License
 
