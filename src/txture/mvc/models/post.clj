@@ -20,6 +20,8 @@
   :permalink
   :short-name)
 
+(def *valid-kws* ["title" "subtitle" "labels"])
+
 (defn- file->post
   "Establish a `post` struct-map, get all readily available information from
   `file`, then return the post."
@@ -55,8 +57,7 @@
         {tag-kw valu} 
         nil)))
   (let [hlines (take-while #(not (str-utils/blank? %)) (post :raw-lines))
-        valid-kws ["title" "subtitle" "labels"]
-        line->map (fn [line] (line->map line valid-kws))
+        line->map (fn [line] (line->map line *valid-kws*))
         maps (map line->map hlines)
         recognized (filter #(not (nil? %)) maps)]
     (reduce merge recognized)))
