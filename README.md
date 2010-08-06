@@ -58,6 +58,6 @@ Copyright (c) 2010 jamesob
       * Disqus?
     * Twitter integration
     * Delicious
-  * Beter text-file parsing.
+  * Better text-file parsing.
   * Non-blog pages?
 
