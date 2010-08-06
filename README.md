@@ -52,6 +52,7 @@ Copyright (c) 2010 jamesob
 
 ## TODO
 
+  * Cleaner barfing.
   * Plugins?
     * Comments
       * Disqus?
