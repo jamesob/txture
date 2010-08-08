@@ -84,14 +84,7 @@
   (let [path (.getPath file)]
     (last (re-find (strs->regex #".*/([\w-.]+)" *posts-ext*) 
                    path))))
-
-(defn- long->date-str
-  "Given a long integer, return a formatted date string."
-  [lint]
-  (let [jdate (new Date lint)
-        formatter (.. DateFormat getDateInstance)]
-    (.format formatter jdate)))
-
+  
 ;; fns to be called externally, returning a post
 ;; ---------------------------------------------
 
@@ -109,7 +102,7 @@
         labels-list (comma-str->list (h-map :labels))
         plink (file=>permalink-str file)
         shortname (file=>shortname-str file)
-        date-str (long->date-str last-mod)]
+        date-str (*datetime-long->str* last-mod)]
     (struct-map post
                 :title title
                 :subtitle subtitle

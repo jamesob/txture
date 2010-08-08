@@ -1,4 +1,10 @@
-(ns txture.config)
+(ns txture.config
+  (:import 
+     [java.util Date]
+     [java.text DateFormat]))
+
+;;; THINGS YOU SHOULD ABSOLUTELY MODIFY
+;;; -----------------------------------
 
 ;; blog characteristics
 ;; --------------------
@@ -37,16 +43,16 @@
 ;;   as follows:
 ;;
 ;;   (defstruct post
-;;             :title
-;;             :subtitle
-;;             :body
-;;             :labels-str
-;;             :labels-list
-;;             :date
-;;             :last-modified
-;;             :raw-lines
-;;             :permalink
-;;             :short-name)
+;;      :title
+;;      :subtitle
+;;      :body
+;;      :labels-str
+;;      :labels-list
+;;      :date
+;;      :last-modified
+;;      :raw-lines
+;;      :permalink
+;;      :short-name)
 ;; 
 ;;   You may use the `post` attributes as they are listed in modifying the
 ;;   functions that follow.
@@ -94,4 +100,27 @@
    [:span.important *title*] 
    " by " 
    [:span.important *author*]])
+
+;;; THINGS YOU PROBABLY SHOULDN'T MODIFY BUT ARE HERE ANYWAY
+;;; --------------------------------------------------------
+
+;; where post date information is written out
+(def *secret-date-file* "metadata/post-dates.data.clj")
+
+;; used globally for date/time formatting
+(def *date-formatter* (. DateFormat getDateTimeInstance
+                         DateFormat/MEDIUM DateFormat/SHORT))
+
+(defn *datetime-str->long*
+  "Given `datetime-str`, return the date's long value."
+  [dstr]
+  (let [jdate (.parse *date-formatter* dstr)]
+    (.getTime jdate)))
+
+(defn *datetime-long->str*
+  "Given `dlong`, return the date's corresponding string value."
+  [dlong]
+  (let [jdate (new Date dlong)]
+    (.format *date-formatter* jdate)))
+ 
 
