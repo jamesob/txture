@@ -11,6 +11,16 @@ but it (should) work fine out of the box.
 
 ## Usage
 
+1. Check out `src/txture/config.clj`. Modify as necessary.
+2. `mkdir` the directory where you'll be storing your posts.
+3. Make a post in the following form:
+
+    :title: Yabba dabba doo
+    :subtitle: A stern treatise on the Red Scare
+    :labels: fake, phony, lame
+
+    [HTML here]
+
 ## Installation
 
 1. Get Leiningen (Clojure not required)
