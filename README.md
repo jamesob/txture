@@ -9,6 +9,11 @@ embedded into HTML based on the blog entries I write.
 **txture** is based on these priorities. **txture** is readable and easily modified,
 but it (should) work fine out of the box.
 
+## Note
+
+The current `lein` script causes step 4 of the installation to barf, so I've
+included the version of `lein` I use in the repository.
+
 ## Usage
 
 1. Check out `src/txture/config.clj`. Modify as necessary.
