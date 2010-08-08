@@ -73,10 +73,6 @@
         recognized (filter #(not (nil? %)) maps)]
     (reduce merge recognized)))
 
-(defn- file=>permalink-str
-  "Derive a permalink string from a file."
-  [file]
-  (str "/" (.getPath file)))
 
 (defn- file=>shortname-str
   "Get the filename, minus the extension, from a file. Return as string."
@@ -84,7 +80,13 @@
   (let [path (.getPath file)]
     (last (re-find (strs->regex #".*/([\w-.]+)" *posts-ext*) 
                    path))))
-  
+
+(defn- file=>permalink-str
+  "Derive a permalink string from a file."
+  [file]
+  (let [shortname (file=>shortname-str file)]
+    (str "/post/" shortname)))   
+
 ;; fns to be called externally, returning a post
 ;; ---------------------------------------------
 

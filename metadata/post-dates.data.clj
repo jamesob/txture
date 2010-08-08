@@ -1,1 +1,1 @@
-{"/posts/sample.txt" ["Aug 7, 2010 11:47 PM" 1281239258000]}
+{"/post/sample" ["Aug 8, 2010 7:01 PM" 1281308471000], "posts/sample" ["Aug 8, 2010 7:01 PM" 1281308471000], "/posts/sample.txt" ["Aug 7, 2010 11:47 PM" 1281239258000]}
