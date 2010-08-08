@@ -1,0 +1,5 @@
+:title: Sample
+:labels: yadda, blah, yah
+
+Isn't this plain?
+
