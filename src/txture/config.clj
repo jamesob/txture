@@ -9,7 +9,6 @@
 (def *text-title* "snappy title by philip marlowe")
 (def *description*
   "This is a web log, etc. Hire me.")
-
 (def *keywords* ; site-wide keywords
   "detective, philip marlowe, philip, marlowe")
 
@@ -26,11 +25,54 @@
 
 (def *num-posts-shown* 6)
 
-;; display functions
-;; -----------------
+;; post display functions
+;; ----------------------
+;;
+;;   Note: a `post` struct, as defined in `txture.mvc.models.post`, is defined
+;;   as the following:
+;;
+;;   (defstruct post
+;;             :title
+;;             :subtitle
+;;             :body
+;;             :labels
+;;             :date
+;;             :last-modified
+;;             :raw-lines
+;;             :permalink
+;;             :short-name)
+;; 
+;;   You may use the `post` attributes as they are listed in modifying the
+;;   functions that follow.
 
-(defn *gen-sidebar* []
+(defn *before-post*
+  "Content that precedes a post."
+  [post]
+  [:div.post-heading
+   [:h2.post-title 
+    [:a {:href (str "/post/" (post :short-name))} (post :title)]]
+   [:h3.post-date (post :date)]])
+
+(defn *post-body*
+  "How the body of a post is displayed."
+  [post]
+  [:div.post-body
+   (for [line (post :body)]
+     (str line \newline))])
+
+(defn *after-post*
+  "What is displayed after each post."
+  [post]
+  [:div.post-footer
+   [:div.permalink 
+    "[" [:a {:href (post :permalink)} "permalink"] "]"]
+   [:div.labels 
+    [:span.inline-code "filed under: "]
+    (post :labels-str)]])
+
+(defn *gen-sidebar*
   "Returns sidebar content."
+  []
   [:div#side-desc 
    [:h2 "about this"] *description*])
    
