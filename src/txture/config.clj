@@ -10,7 +10,7 @@
 (def *keywords* ; site-wide keywords
   "detective, philip marlowe, philip, marlowe")
 
-;; this is a relative path based rooted on the top-level of txture, i.e. if you
+;; this is a relative path rooted on the top-level of txture, i.e. if you
 ;; leave *posts-dir* defined as "posts/", the posts folder will be alongside
 ;; "src/" and "static/".
 (def *posts-dir* "posts/")
