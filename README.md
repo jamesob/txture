@@ -20,6 +20,9 @@ but it (should) work fine out of the box.
         :labels: fake, phony, lame
 
         [HTML here]
+   
+   Ensure that there is a blank line between the header information and the
+   body, which can be any HTML.
 
 ## Installation
 
@@ -63,6 +66,7 @@ Copyright (c) 2010 jamesob
 ## TODO
 
   * Cleaner barfing.
+  * Markdown parsing.
   * Plugins?
     * Comments
       * Disqus?
