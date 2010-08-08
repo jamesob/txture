@@ -5,7 +5,6 @@
      [txture.mvc.model :as model]))
 
 (defn show-post [id]
-  (println (str "showing " id))
   (let [post (first (model/get-posts-by-id id))]
     (view/show-post post)))
 

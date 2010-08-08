@@ -150,7 +150,6 @@
   (let [header (breadcrumb-header-post post)
         main (put-in-main (wrap-post post))
         all-content (add-footer (add-sidebar main))]
-    (println (post-head post))
     (html-doc
       (post :title)
       (post-head post)
