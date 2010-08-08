@@ -9,7 +9,9 @@
 (def *text-title* "snappy title by philip marlowe")
 (def *description*
   "This is a web log, etc. Hire me.")
-(def *keywords* ; site-wide keywords
+;;
+;; these keywords will be generate the meta tags used for the entire site.
+(def *keywords* 
   "detective, philip marlowe, philip, marlowe")
 
 ;; this is a relative path rooted on the top-level of txture, i.e. if you
@@ -17,12 +19,15 @@
 ;; "src/" and "static/".
 (def *posts-dir* "posts/")
 
+;; only look for posts with this file extension. To pick up any file extension,
+;; use ".*".
 (def *posts-ext* ".txt")
 
 ;; If you haven't screwed with `src/txture/core.clj`, then any absolute path
 ;; referred to within a reference in the HTML originates in `static/`.
 (def *css-loc* "/css/log.css")
 
+;; the number of posts shown on the main page
 (def *num-posts-shown* 6)
 
 ;; post display functions
