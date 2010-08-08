@@ -4,10 +4,6 @@
      hiccup.core
      hiccup.page-helpers))
 
-;; misc. utility fns
-;; -----------------
-
-
 ;; fns which return entire HTML docs
 ;; ---------------------------------
 

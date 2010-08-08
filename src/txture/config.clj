@@ -70,11 +70,17 @@
     [:span.inline-code "filed under: "]
     (post :labels-str)]])
 
+;; sidebar display functions
+;; -------------------------
+
 (defn *gen-sidebar*
   "Returns sidebar content."
   []
   [:div#side-desc 
    [:h2 "about this"] *description*])
+
+;; footer display functions
+;; ------------------------
    
 (defn *gen-footer* []
   "Returns footer content."
