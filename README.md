@@ -15,11 +15,11 @@ but it (should) work fine out of the box.
 2. `mkdir` the directory where you'll be storing your posts.
 3. Make a post in the following form:
 
-    :title: Yabba dabba doo
-    :subtitle: A stern treatise on the Red Scare
-    :labels: fake, phony, lame
+        :title: Yabba dabba doo
+        :subtitle: A stern treatise on the Red Scare
+        :labels: fake, phony, lame
 
-    [HTML here]
+        [HTML here]
 
 ## Installation
 
