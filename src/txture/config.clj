@@ -33,14 +33,15 @@
 ;; post display functions
 ;; ----------------------
 ;;
-;;   Note: a `post` struct, as defined in `txture.mvc.models.post`, is defined
-;;   as the following:
+;;   Note: a `post` struct, as defined in `txture.mvc.models.post`, is 
+;;   as follows:
 ;;
 ;;   (defstruct post
 ;;             :title
 ;;             :subtitle
 ;;             :body
-;;             :labels
+;;             :labels-str
+;;             :labels-list
 ;;             :date
 ;;             :last-modified
 ;;             :raw-lines
@@ -49,13 +50,13 @@
 ;; 
 ;;   You may use the `post` attributes as they are listed in modifying the
 ;;   functions that follow.
-
+;;
 (defn *before-post*
   "Content that precedes a post."
   [post]
   [:div.post-heading
    [:h2.post-title 
-    [:a {:href (str "/post/" (post :short-name))} (post :title)]]
+    [:a {:href (post :permalink)} (post :title)]]
    [:h3.post-date (post :date)]])
 
 (defn *post-body*
