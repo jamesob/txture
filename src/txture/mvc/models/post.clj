@@ -14,7 +14,8 @@
   :title
   :subtitle
   :body
-  :labels
+  :labels-list
+  :labels-str
   :date
   :last-modified
   :raw-lines
@@ -104,7 +105,8 @@
         h-map (post-header->str-map header-lines)
         title (h-map :title)
         subtitle (h-map :subtitle)
-        labels (comma-str->list (h-map :labels))
+        labels-str (h-map :labels)
+        labels-list (comma-str->list (h-map :labels))
         plink (file=>permalink-str file)
         shortname (file=>shortname-str file)
         date-str (long->date-str last-mod)]
@@ -112,7 +114,8 @@
                 :title title
                 :subtitle subtitle
                 :body body-lines
-                :labels labels
+                :labels-str labels-str
+                :labels-list labels-list
                 :date date-str
                 :last-modified last-mod
                 :raw-lines rlines
