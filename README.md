@@ -25,6 +25,9 @@ but it (should) work fine out of the box.
    Ensure that there is a blank line between the header information and the
    body, which can be any HTML.
 
+4. Realize that, oh my god, I shouldn't be using this: it's so primitive right
+now.
+
 ## Installation
 
 1. Get Leiningen (Clojure not required)
@@ -66,6 +69,7 @@ Copyright (c) 2010 jamesob
 
 ## TODO
 
+  * More bland default theme.
   * Cleaner barfing.
   * Markdown parsing.
   * Plugins?
@@ -73,6 +77,5 @@ Copyright (c) 2010 jamesob
       * Disqus?
     * Twitter integration
     * Delicious
-  * Better text-file parsing.
   * Non-blog pages?
 
