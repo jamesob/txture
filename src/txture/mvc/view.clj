@@ -115,22 +115,12 @@
 (defn- add-sidebar
   "Adds a sidebar to the left of the content div."
   [html-content]
-
-  (defn- gen-sidebar []
-    [:div#side-desc [:h2 "about this"] *description*])
-
-  [:div html-content [:div#sidebar (gen-sidebar)]])
+  [:div html-content 
+   [:div#sidebar (*gen-sidebar*)]])
 
 (defn- add-footer
   [html-content]
-
-  (defn- gen-footer []
-     [:div 
-      [:span.important *title*] 
-      " by " 
-      [:span.important *author*]])
-
-  [:div html-content [:div#footer (gen-footer)]])
+  [:div html-content [:div#footer (*gen-footer*)]])
 
 ;; fns to be used in `mvc.controller`
 ;; -----------------------------------

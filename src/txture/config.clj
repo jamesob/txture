@@ -1,5 +1,8 @@
 (ns txture.config)
 
+;; blog characteristics
+;; --------------------
+
 (def *author* "p. marlowe")
 (def *title* "title")
 (def *subtitle* "")
@@ -23,4 +26,18 @@
 
 (def *num-posts-shown* 6)
 
+;; display functions
+;; -----------------
+
+(defn *gen-sidebar* []
+  "Returns sidebar content."
+  [:div#side-desc 
+   [:h2 "about this"] *description*])
+   
+(defn *gen-footer* []
+  "Returns footer content."
+  [:div 
+   [:span.important *title*] 
+   " by " 
+   [:span.important *author*]])
 
