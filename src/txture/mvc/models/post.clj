@@ -58,7 +58,7 @@
   (defn- get-tag+val 
     "Return a list of a line's tag and value. May return an empty list."
     [line]
-    (drop 1 (re-find #"\s*:(\w+):\s+(.*)" line)))
+    (drop 1 (re-find #"\s*(\w+):\s+(.*)" line)))
   (defn- line->map 
     "Take in one line, presumably of the form ':tag: value' and return
     {:tag 'val'} if the tag is in `kws`."

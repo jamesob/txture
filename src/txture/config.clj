@@ -8,11 +8,17 @@
   "p. marlowe")
 (def *title* 
   "title")
-(def *subtitle* 
+(def *subtitle*
   "")
-(def *text-title* 
+
+(def 
+  #^{:doc "<title> of main page's <head>."}
+  *text-title* 
   "snappy title by philip marlowe")
-(def *description*
+
+(def 
+  #^{:doc "Text displayed in side-panel, by default."}
+  *description*
   "This is a web log, etc. Hire me.")
 
 (def 
