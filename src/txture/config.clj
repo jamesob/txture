@@ -1,37 +1,53 @@
-(ns txture.config)
-
-;;; THINGS YOU SHOULD ABSOLUTELY MODIFY
-;;; -----------------------------------
+(ns txture.config
+  "Things you should absolutely modify.")
 
 ;; blog characteristics
 ;; --------------------
 
-(def *author* "p. marlowe")
-(def *title* "title")
-(def *subtitle* "")
-(def *text-title* "snappy title by philip marlowe")
+(def *author* 
+  "p. marlowe")
+(def *title* 
+  "title")
+(def *subtitle* 
+  "")
+(def *text-title* 
+  "snappy title by philip marlowe")
 (def *description*
   "This is a web log, etc. Hire me.")
-;;
-;; these keywords will be generate the meta tags used for the entire site.
-(def *keywords* 
+
+(def 
+  #^{:doc 
+     "these keywords will generate the meta tags used for the entire site."}
+  *keywords* 
   "detective, philip marlowe, philip, marlowe")
 
-;; this is a relative path rooted on the top-level of txture, i.e. if you
-;; leave *posts-dir* defined as "posts/", the posts folder will be alongside
-;; "src/" and "static/".
-(def *posts-dir* "posts/")
+(def 
+  #^{:doc
+     "this is a relative path rooted in wherever you're running `txture.core`
+     from; i.e. if you run the webserver as detailed in the instructions and
+     leave *posts-dir* defined as 'posts/', the posts folder will be alongside
+     'src/' and 'static/'"}
+  *posts-dir* 
+  "posts/")
 
-;; only look for posts with this file extension. To pick up any file extension,
-;; use ".*".
-(def *posts-ext* ".txt")
+(def 
+  #^{:doc
+     "only look for posts, within *posts-dir*, with this file extension. To pick up
+     any file extension, use '.*'."}
+  *posts-ext* 
+  ".txt")
 
-;; If you haven't screwed with `src/txture/core.clj`, then any absolute path
-;; referred to within a reference in the HTML originates in `static/`.
-(def *css-loc* "/stylesheets/main.css")
+(def 
+  #^{:doc 
+     "If you haven't screwed with `src/txture/core.clj`, then any absolute path
+     referred to within a reference in the HTML originates in `static/`."}
+  *css-loc* 
+  "/stylesheets/main.css")
 
-;; the number of posts shown on the main page
-(def *num-posts-shown* 6)
+(def 
+  #^{:doc "the number of posts shown on the main page"}
+  *num-posts-shown* 
+  6)
 
 ;; post display functions
 ;; ----------------------
@@ -54,6 +70,7 @@
 ;;   You may use the `post` attributes as they are listed in modifying the
 ;;   functions that follow.
 ;;
+
 (defn *before-post*
   "Content that precedes a post."
   [post]
@@ -91,8 +108,9 @@
 ;; footer display functions
 ;; ------------------------
    
-(defn *gen-footer* []
+(defn *gen-footer* 
   "Returns footer content."
+  []
   [:div 
    [:span.important *title*] 
    " by " 
