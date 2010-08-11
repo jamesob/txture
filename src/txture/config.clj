@@ -1,7 +1,4 @@
-(ns txture.config
-  (:import 
-     [java.util Date]
-     [java.text DateFormat]))
+(ns txture.config)
 
 ;;; THINGS YOU SHOULD ABSOLUTELY MODIFY
 ;;; -----------------------------------
@@ -31,7 +28,7 @@
 
 ;; If you haven't screwed with `src/txture/core.clj`, then any absolute path
 ;; referred to within a reference in the HTML originates in `static/`.
-(def *css-loc* "/css/log.css")
+(def *css-loc* "/stylesheets/main.css")
 
 ;; the number of posts shown on the main page
 (def *num-posts-shown* 6)
@@ -100,27 +97,4 @@
    [:span.important *title*] 
    " by " 
    [:span.important *author*]])
-
-;;; THINGS YOU PROBABLY SHOULDN'T MODIFY BUT ARE HERE ANYWAY
-;;; --------------------------------------------------------
-
-;; where post date information is written out
-(def *secret-date-file* "metadata/post-dates.data.clj")
-
-;; used globally for date/time formatting
-(def *date-formatter* (. DateFormat getDateTimeInstance
-                         DateFormat/MEDIUM DateFormat/SHORT))
-
-(defn *datetime-str->long*
-  "Given `datetime-str`, return the date's long value."
-  [dstr]
-  (let [jdate (.parse *date-formatter* dstr)]
-    (.getTime jdate)))
-
-(defn *datetime-long->str*
-  "Given `dlong`, return the date's corresponding string value."
-  [dlong]
-  (let [jdate (new Date dlong)]
-    (.format *date-formatter* jdate)))
- 
 

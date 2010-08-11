@@ -1,6 +1,7 @@
 (ns txture.mvc.models.post
   (:require 
-     [clojure.contrib.str-utils2 :as str-utils])
+     [clojure.contrib.str-utils2 :as str-utils]
+     [txture.dates :as dates])
   (:use 
      clojure.contrib.duck-streams
      txture.config)
@@ -104,7 +105,7 @@
         labels-list (comma-str->list (h-map :labels))
         plink (file=>permalink-str file)
         shortname (file=>shortname-str file)
-        date-str (*datetime-long->str* last-mod)]
+        date-str (dates/datetime-long->str last-mod)]
     (struct-map post
                 :title title
                 :subtitle subtitle
