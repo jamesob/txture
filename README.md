@@ -19,11 +19,11 @@ included the version of `lein` I use in the repository.
 1. Check out `src/txture/config.clj`. Modify as necessary.
 2. `mkdir` the directory where you'll be storing your posts.
 3. `cd` into posts directory, crack open your favorite text editor and type up a post 
-   in the following form:
+   in the following form (YAML):
 
-        :title: Yabba dabba doo
-        :subtitle: A stern treatise on the Red Scare
-        :labels: fake, phony, lame
+        title: Yabba dabba doo
+        subtitle: A stern treatise on the Red Scare
+        labels: fake, phony, lame
 
         [HTML here]
    
