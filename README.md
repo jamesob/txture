@@ -1,6 +1,6 @@
 # txture: a web log engine for people who like flat files, convenience, and Lisp
 
-**That fresh-ink scent don't come off a relational database.**
+## That fresh-ink scent don't come off a relational database.
 
 I like flat files better than databases for my writing. I also like
 ``meta`` tags and other search-engine luring information to be derived and
