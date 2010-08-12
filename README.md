@@ -16,7 +16,7 @@ included the version of `lein` I use in the repository.
 
 ## Usage
 
-1. Check out `src/txture/config.clj`. Modify as necessary.
+1. Read `src/txture/config.clj`. Modify as necessary.
 2. `mkdir` the directory where you'll be storing your posts.
 3. `cd` into posts directory, crack open your favorite text editor and type up a post 
    in the following form (YAML):
