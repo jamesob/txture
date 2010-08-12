@@ -83,4 +83,5 @@ Copyright (c) 2010 jamesob
     * Twitter integration
     * Delicious
   * Non-blog pages?
+  * Pretty printing source.
 
