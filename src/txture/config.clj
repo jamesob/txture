@@ -1,5 +1,12 @@
 (ns txture.config
-  "Things you should absolutely modify.")
+  "Things you should absolutely modify.
+
+  All absolute paths are rooted in the `static` directory unless otherwise
+  specified in `txture.core`.
+
+  All relative paths are rooted in the directory from which you've run 
+  `txture.core`, which (assuming you've followed the instructions) is the 
+  top-level.")
 
 ;; blog characteristics
 ;; --------------------
@@ -11,41 +18,41 @@
 (def *subtitle*
   "")
 
-(def 
-  #^{:doc "<title> of main page's <head>."}
+(def #^{:doc 
+  "<title> of main page's <head>."}
   *text-title* 
   "snappy title by philip marlowe")
 
-(def 
-  #^{:doc "Text displayed in side-panel, by default."}
+(def #^{:doc 
+  "Text displayed in side-panel, by default."}
   *description*
   "This is a web log, etc. Hire me.")
 
-(def 
-  #^{:doc 
+(def #^{:doc 
      "these keywords will generate the meta tags used for the entire site."}
   *keywords* 
   "detective, philip marlowe, philip, marlowe")
 
-(def 
-  #^{:doc
-     "this is a relative path rooted in wherever you're running `txture.core`
+(def #^{:doc
+     "The directory where txture looks for post files.
+     
+     this is a relative path rooted in wherever you're running `txture.core`
      from; i.e. if you run the webserver as detailed in the instructions and
      leave *posts-dir* defined as 'posts/', the posts folder will be alongside
      'src/' and 'static/'"}
   *posts-dir* 
   "posts/")
 
-(def 
-  #^{:doc
+(def #^{:doc
      "only look for posts, within *posts-dir*, with this file extension. To pick up
      any file extension, use '.*'."}
   *posts-ext* 
   ".txt")
 
-(def 
-  #^{:doc 
-     "If you haven't screwed with `src/txture/core.clj`, then any absolute path
+(def #^{:doc 
+     "The location of the stylesheet used for every page.
+     
+     If you haven't screwed with `src/txture/core.clj`, then any absolute path
      referred to within a reference in the HTML originates in `static/`."}
   *css-loc* 
   "/stylesheets/main.css")
@@ -78,7 +85,7 @@
 ;;
 
 (defn *before-post*
-  "Content that precedes a post."
+  "Content that precedes a txture.mvc.models.post."
   [post]
   [:div.post-heading
    [:h2.post-title 
