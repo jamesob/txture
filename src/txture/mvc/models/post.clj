@@ -14,7 +14,7 @@
 (defstruct post
   :title
   :subtitle
-  :body
+  :body-list
   :labels-list
   :labels-str
   :date
@@ -109,7 +109,7 @@
     (struct-map post
                 :title title
                 :subtitle subtitle
-                :body body-lines
+                :body-list body-lines
                 :labels-str labels-str
                 :labels-list labels-list
                 :date date-str

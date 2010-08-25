@@ -2,6 +2,7 @@
   (:require 
      [clojure.contrib.str-utils2 :as str-utils]
      [txture.dates :as dates]
+     [txture.hooks :as hooks]
      [txture.mvc.models.post :as post])
   (:use 
      clojure.contrib.duck-streams
@@ -45,13 +46,16 @@
 ;; -------------------------------
 
 (defn files->posts
-  "Convert a seq of files to a seq of post structs; involves doing some date
+  "Convert a seq of files to a seq of post structs; involves applying any
+  modifications on account of plugins and doing some date
   wrangling along the way."
   [fileseq]
-  (let [posts (map #(post/file->post %) fileseq)]
-    (if (not (dates/secret-dates-exists?)) (dates/init-secret-dates posts))
-    (dates/update-secret-dates posts)
-    (dates/adjust-post-dates posts)))
+  (let [posts (map #(post/file->post %) fileseq)
+        modded-posts (hooks/modify-posts posts)]
+    (if (not (dates/secret-dates-exists?)) 
+      (dates/init-secret-dates modded-posts))
+    (dates/update-secret-dates modded-posts)
+    (dates/adjust-post-dates modded-posts)))
 
 ;; fns used in `mvc.controller`
 ;; -----------------------------

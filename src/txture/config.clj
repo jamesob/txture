@@ -71,7 +71,7 @@
 ;;   (defstruct post
 ;;      :title
 ;;      :subtitle
-;;      :body
+;;      :body-list
 ;;      :labels-str
 ;;      :labels-list
 ;;      :date
@@ -96,7 +96,7 @@
   "How the body of a post is displayed."
   [post]
   [:div.post-body
-   (for [line (post :body)]
+   (for [line (post :body-list)]
      (str line \newline))])
 
 (defn *after-post*
