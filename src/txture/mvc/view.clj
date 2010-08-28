@@ -1,4 +1,6 @@
 (ns txture.mvc.view
+  (:require
+     [txture.hooks :as hooks])
   (:use 
      txture.config
      hiccup.core
@@ -23,6 +25,7 @@
    [:meta {:name "author" :content *author*}]
    [:meta {:http-equiv "Content-Type" :content "text/html" :charset "UTF-8"}]
    (include-css *css-loc*)
+   (hooks/append-to-head)
    other-tags])
 
 (defn- root-head

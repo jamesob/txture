@@ -1,9 +1,10 @@
 (ns txture.hooks
   "Provide hooks for plugins."
   (:require
-     txture.plugins.markdown))
+     txture.plugins.markdown.core))
 
 (def *post-mod-name* "modify-post")
+(def *head-add-name* "add-to-head")
 
 (defn- get-fns-by-name
   "Retrieve a list of functions, all with `namestr` somewhere in their names,
@@ -36,7 +37,10 @@
       posts ; nothing to do
       (map thread-fnc posts))))
 
-(defn wrap-html)
+(defn append-to-head
+  []
+  (let [all-add-fns (get-fns-by-name *head-add-name*)]
+    (reduce str (map #(%) all-add-fns))))
 
 (defn wrap-body)
 
