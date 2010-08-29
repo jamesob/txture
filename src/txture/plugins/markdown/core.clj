@@ -8,7 +8,7 @@
 <script src='/js/showdown.js' type='text/javascript'></script>
 <script src='/js/render-showdown.js' type='text/javascript'></script>"))
 
-(defn add-to-head
+(defn append-to-head
   "Add javascript imports to head."
   []
   *head*)

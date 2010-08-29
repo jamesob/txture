@@ -5,13 +5,14 @@
   (:import
      [java.io File]))
 
-;;; utility functions
-;;; -----------------
-
 ;; name of functions to look for in each plugin namespace
 (def *post-mod-name* "modify-post")
-(def *head-add-name* "add-to-head")
+(def *head-add-name* "append-to-head")
 (def *wrap-post-body-name* "wrap-post-body-HTML")
+(def *wrap-post-name* "wrap-post-HTML")
+
+;;; utility functions
+;;; -----------------
 
 (defn- get-plugin-nss
   "Return a list of all plugin namespaces visible from `dirname`."
@@ -81,11 +82,21 @@
     (accum-str-results all-add-fns)))
 
 (defn wrap-post-body-HTML
-  "Wraps each post's HTML in more HTML. Functions defined in plugin
+  "Wraps each post's body HTML in more HTML. Functions defined in plugin
   files named `*wrap-post-name*` must (i) have arity 1 and (ii) use
   hiccup HTML syntax."
   [post-HTML]
   (let [all-wrap-fns (get-fns-by-name *wrap-post-body-name*)
         thread-fnc (make-thread-fnc all-wrap-fns)]
     (thread-fnc post-HTML)))
+
+(defn wrap-post-HTML
+  "Wraps each post's HTML in more HTML. Functions defined in plugin
+  files named `*wrap-post-name*` must (i) have arity 1 and (ii) use
+  hiccup HTML syntax."
+  [post-HTML]
+  (let [all-wrap-fns (get-fns-by-name *wrap-post-name*)
+        thread-fnc (make-thread-fnc all-wrap-fns)]
+    (thread-fnc post-HTML)))
+ 
 

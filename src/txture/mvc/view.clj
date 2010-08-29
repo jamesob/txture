@@ -94,10 +94,11 @@
 (defn- wrap-post
   "Wraps and displays post with title, post-date, etc."
   [post]
-  [:div.post
-   (*before-post* post)
-   (post-body post)
-   (*after-post* post)])
+  (hooks/wrap-post-HTML
+    [:div.post
+     (*before-post* post)
+     (post-body post)
+     (*after-post* post)]))
 
 (defn- put-in-main
   "Put content in main."
