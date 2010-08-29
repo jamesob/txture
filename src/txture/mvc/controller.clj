@@ -1,5 +1,6 @@
 (ns txture.mvc.controller
-  (:use txture.config)
+  (:use 
+     txture.config)
   (:require 
      [txture.mvc.view :as view]
      [txture.mvc.model :as model]))

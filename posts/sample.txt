@@ -1,5 +1,27 @@
-title: Sample
-labels: yadda, blah, yah
+title: Welcome
+labels: not real, you should be writing
 
-Isn't this **plain**? Doesn't it make you want to write something worthwhile?
+Welcome to txture
+-----------------
 
+Check out the builtin Markdown rendering. Ask yourself the following
+questions:
+
+  1. What could be better about `txture`?
+  2. Do you know who wrote `txture`?
+  3. Do you know this joker's email address?
+  5. Will you contact him with suggestions for `txture`?
+
+Perfect. Try visting your [localhost]. It's probably where this website is being
+hosted. 
+
+A few things to do:
+  
+  - Learn the [Markdown syntax][Markdown]. It's pretty simple.
+  - Take a look at `src/txture/config.clj`. It has all kinds of sweet options.
+  - Figure out how to install plugins. It'll take all of three seconds.
+
+  [localhost]: http://localhost:8080
+  [Markdown]: http://daringfireball.net/projects/markdown/
+
+ 
