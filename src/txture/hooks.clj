@@ -9,18 +9,34 @@
 (def *post-mod-name* "modify-post")
 (def *head-add-name* "add-to-head")
 
+(defn- get-plugin-nss
+  "Return a list of all plugin namespaces visible from `dirname`."
+  [dirname]
+  (let [nss (find-namespaces-in-dir (new File dirname))]
+    (filter #(re-find #"txture.plugins.*" (str %)) nss)))
+
+(defn- require-nss
+  "Given a list of namespaces, require all of them."
+  [nss]
+  (dorun (map require nss)))
+
+(defn- extract-all-fns
+  "Given a list of namespaces, return the fully qualified name of
+  all functions in the each namespace, merged together into one list."
+  [nss]
+  (let [pubs (reduce merge (map #(ns-publics %) nss))
+        only-fns (map #(second %) pubs)]
+    only-fns))
+
 (defn- get-fns-by-name
   "Retrieve a list of functions, all with `namestr` somewhere in their names,
   from the visible namespaces."
   [namestr]
-  (let [nss (find-namespaces-in-dir (new File "."))
-        plugin-nss (filter #(re-find #"txture.plugins.*" (str %)) nss)
-        import-nss (dorun (map require plugin-nss)) ;; only for side-effects
-        pubs (reduce merge (map #(ns-publics %) plugin-nss))
-        only-fns (map #(second %) pubs)
+  (let [plugin-nss (get-plugin-nss ".")
+        import-nss (require-nss plugin-nss) ;; only for side-effects
+        fns (extract-all-fns plugin-nss)
         patt (re-pattern namestr)]
-    (filter #(re-find patt (str %))
-            only-fns)))
+    (filter #(re-find patt (str %)) fns)))
 
 (defn- make-thread-fnc
   "Returns a function which threads `foo` through the list `fns`."
