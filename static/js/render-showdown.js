@@ -1,5 +1,5 @@
 function renderMarkdown() {
-	var postbodies = document.getElementsByClassName('post-body'),
+	var postbodies = document.getElementsByClassName('render-markdown'),
 		converter = new Showdown.converter();
 
 	if(postbodies) {

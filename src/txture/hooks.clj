@@ -5,9 +5,13 @@
   (:import
      [java.io File]))
 
+;;; utility functions
+;;; -----------------
+
 ;; name of functions to look for in each plugin namespace
 (def *post-mod-name* "modify-post")
 (def *head-add-name* "add-to-head")
+(def *wrap-post-body-name* "wrap-post-body-HTML")
 
 (defn- get-plugin-nss
   "Return a list of all plugin namespaces visible from `dirname`."
@@ -42,28 +46,46 @@
   "Returns a function which threads `foo` through the list `fns`."
   [fns]
   (fn [foo] 
-    (loop [fnlist (rest fns)
-           result ((first fns) foo)]
-      (if (= fnlist ())
-        result
-        (recur (rest fnlist) ((first fnlist) result))))))
+    (println (str "incoming: " foo))
+    (if (empty? fns)
+      foo ; nothing to do
+      (loop [fnlist (rest fns)
+             result ((first fns) foo)]
+        (if (= fnlist ())
+          result
+          (recur (rest fnlist) ((first fnlist) result)))))))
 
+(defn- accum-str-results
+  "Given a list of functions, all of which should have arity 0 and
+  return strings, accumulate their results into one string."
+  [fns]
+  (reduce str (map #(%) fns)))
+
+;;; public functions
+;;; ----------------
 
 (defn modify-posts
-  "Compose all plugins to modify posts somehow."
+  "Compose all post modification plugin fns and apply to all posts. Each
+  function named `*post-mod-name*` defined in plugin files must take one
+  argument."
   [posts]
   (let [all-mod-fns (get-fns-by-name *post-mod-name*)
         thread-fnc (make-thread-fnc all-mod-fns)]
-    (println all-mod-fns)
-    (if (= () all-mod-fns)
-      posts ; nothing to do
-      (map thread-fnc posts))))
+    (map thread-fnc posts)))
 
 (defn append-to-head
+  "Add to each page's <head>. Functions of `*head-add-name*` defined
+  in plugin files must not take any arguments."
   []
   (let [all-add-fns (get-fns-by-name *head-add-name*)]
-    (reduce str (map #(%) all-add-fns))))
+    (accum-str-results all-add-fns)))
 
-(defn wrap-body)
+(defn wrap-post-body-HTML
+  "Wraps each post's HTML in more HTML. Functions defined in plugin
+  files named `*wrap-post-name*` must (i) have arity 1 and (ii) use
+  hiccup HTML syntax."
+  [post-HTML]
+  (let [all-wrap-fns (get-fns-by-name *wrap-post-body-name*)
+        thread-fnc (make-thread-fnc all-wrap-fns)]
+    (thread-fnc post-HTML)))
 
-(defn wrap-head)

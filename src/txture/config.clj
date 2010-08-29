@@ -92,13 +92,6 @@
     [:a {:href (post :permalink)} (post :title)]]
    [:h3.post-date (post :date)]])
 
-(defn *post-body*
-  "How the body of a post is displayed."
-  [post]
-  [:div.post-body
-   (for [line (post :body-list)]
-     (str line \newline))])
-
 (defn *after-post*
   "What is displayed after each post."
   [post]
