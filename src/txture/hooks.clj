@@ -1,8 +1,11 @@
 (ns txture.hooks
   "Provide hooks for plugins."
-  (:require
-     txture.plugins.markdown.core))
+  (:use
+     clojure.contrib.find-namespaces)
+  (:import
+     [java.io File]))
 
+;; name of functions to look for in each plugin namespace
 (def *post-mod-name* "modify-post")
 (def *head-add-name* "add-to-head")
 
@@ -10,9 +13,12 @@
   "Retrieve a list of functions, all with `namestr` somewhere in their names,
   from the visible namespaces."
   [namestr]
-  (let [pubs (reduce merge (map #(ns-publics %) (all-ns)))
+  (let [nss (find-namespaces-in-dir (new File "."))
+        plugin-nss (filter #(re-find #"txture.plugins.*" (str %)) nss)
+        import-nss (dorun (map require plugin-nss)) ;; only for side-effects
+        pubs (reduce merge (map #(ns-publics %) plugin-nss))
         only-fns (map #(second %) pubs)
-        patt (re-pattern (str "#'txture.plugins.*" namestr))]
+        patt (re-pattern namestr)]
     (filter #(re-find patt (str %))
             only-fns)))
 
