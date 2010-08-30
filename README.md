@@ -55,7 +55,7 @@ Txture's design philosophy is as follows:
 
     |-- README.md
     |-- metadata
-    |   `-- post-dates.data.clj <-- persistant post date information
+    |   `-- post-dates.data.clj <-- preserve when txture first saw a post here
     |-- posts                   <-- posts are stored here, by default
     |   `-- sample.txt                under any directory structure you like.
     |-- project.clj                   Only caveat: no two posts can have same
