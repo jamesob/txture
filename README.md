@@ -28,19 +28,19 @@ posts you're delivering.
 txture offers a very minimal core which can be extended and manipulated by a
 robust plug-in architecture. A great plug-in architecture will allow you to 
 
-    1. easily extend txture to accommodate your likes, and
-    2. allow you to easily distribute your plug-in to others.
-    These two consequences will facilitate txture's longevity and adaptivity.
+  1. easily extend txture to accommodate your likes, and
+  2. allow you to easily distribute your plug-in to others.
+  These two consequences will facilitate txture's longevity and adaptivity.
 
 Txture's design philosophy is as follows:
 
-    1. never duplicate functionality that other, better, and existing tools
-       already provide. 
-    2. anything that is not basic to txture is a plugin. This includes features
-       like Markdown parsing, CSS rendering, Disqus comments which are included
-       within the core of other minimal weblog platforms. This reliance on a
-       plug-in architecture will not only keep the txture core stark, but it
-       will provide numerous examples of how plug=ins are authored.
+  1. never duplicate functionality that other, better, and existing tools
+     already provide. 
+  2. anything that is not basic to txture is a plugin. This includes features
+     like Markdown parsing, CSS rendering, Disqus comments which are included
+     within the core of other minimal weblog platforms. This reliance on a
+     plug-in architecture will not only keep the txture core stark, but it
+     will provide numerous examples of how plug=ins are authored.
 
 ## Note
 
