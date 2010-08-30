@@ -43,6 +43,41 @@ Txture's design philosophy is as follows:
      plug-in architecture will not only keep the txture core stark, but it
      will provide numerous examples of how plug-ins are authored.
 
+## Architecture
+
+    |-- README.md
+    |-- metadata
+    |   `-- post-dates.data.clj <-- persistant post date information
+    |-- posts                   <-- posts are stored here, by default
+    |   `-- sample.txt                under any directory structure you like.
+    |-- project.clj                   Only caveat: no two posts can have same
+    |-- src                           filename.
+    |   `-- txture
+    |       |-- config.clj     <-- you modify this to your liking
+    |       |-- core.clj
+    |       |-- dates.clj
+    |       |-- hooks.clj      <-- defines plug-in architecture
+    |       |-- mvc
+    |       |   |-- controller.clj
+    |       |   |-- model.clj
+    |       |   |-- models
+    |       |   |   `-- post.clj
+    |       |   |-- view.clj
+    |       |   `-- views
+    |       `-- plugins       <-- plug-ins are dropped in here and 
+    |           `-- markdown        automatically detected 
+    |               `-- core.clj
+    |-- static  
+    |   |-- js
+    |   |   |-- render-showdown.js <-- for Markdown plug-in
+    |   |   `-- showdown.js        <-|
+    |   `-- stylesheets
+    |       |-- main.css
+    |       `-- main.less
+    `-- test                  <-- completely unused
+        `-- deltaT
+            `-- core_test.clj
+
 ## Note
 
 The current `lein` script causes step 4 of the installation to barf, so I've
