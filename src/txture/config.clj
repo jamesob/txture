@@ -15,7 +15,7 @@
   "p. marlowe")
 (def *title* 
   "title")
-(def *subtitle*
+(def *subtitle* ; currently does nothing
   "")
 
 (def #^{:doc 
