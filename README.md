@@ -19,30 +19,26 @@ yet.
 
 ## Philosophy
 
-txture boasts a bare Model-View-Controller core reliant on a simple, powerful
+txture offers a bare Model-View-Controller core reliant on a simple
 plugin architecture for all modern goodies.
 
-txture is shaped according to the Unix philosophy as tightly as a web log
-platform can sanely afford. 
+txture is shaped according to the Unix philosophy until it becomes stupid.
 
-Comments are probably handled best by Disqus.
-Existing Markdown processors written in JavaScript should be used instead of
-something I'd write from scratch in Clojure. Similarly, CSS rendering tools like
-Less should be used via existing, separate scripts. The filesystem should be
-used for storing post information: you wanna symlink your posts in from
-somewhere else?  wanna use git to version control your writing? wanna do both? I
-don't give a goddamn and I shouldn't have to: txture's use of flatfiles allows
-you to do whatever you like, so long as you specify the location and file
-extentions of the posts you're delivering.
+Comments are probably handled best by Disqus.  Existing Markdown processors
+written in JavaScript should be used instead of something I'd write from scratch
+in Clojure. Similarly, CSS rendering tools like Less should be used via
+existing, separate scripts. The filesystem should be used for storing post
+information: you wanna symlink your posts in from somewhere else?  wanna use git
+to version control your writing? wanna do both? I don't give a goddamn and I
+shouldn't have to: txture's use of flatfiles allows you to do whatever you like,
+so long as you specify the location and file extentions of the posts you're
+delivering.
 
 txture offers a very minimal core which can be extended and manipulated by a
 robust plugin architecture. A great plugin architecture will allow you to 
 
   1. easily extend txture to accommodate your likes, and
   2. allow you to distribute your plugin to others without too much cursing.
-
-These two consequences will facilitate txture's longevity and ability to use
-new, hip web swag.
 
 Txture's design philosophy is as follows:
 
