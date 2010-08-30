@@ -14,7 +14,8 @@ an excellent plug-in architecture, so I wrote one up and it quickly began
 driving the development of txture.
 
 **txture** is readable and easily modified, but it works pleasantly and simply
-out of the box.
+out of the box. It is still in development and has not been formally released
+yet.
 
 ## Philosophy
 
