@@ -25,13 +25,13 @@ plug-in architecture for all modern goodies.
 Txture is shaped according to the Unix philosophy as nearly as a web log
 platform can sanely afford. Comments are probably handled best by Disqus.
 Existing Markdown processors written in JavaScript should be used instead of
-something I'd write from scratch in Clojure. CSS rendering tools like Less
-should be used via existing, separate scripts. The filesystem should be used for
-storing post information: you wanna symlink your posts in from somewhere else?
-wanna use git to version control your writing? wanna do both? I don't give a
-goddamn and I shouldn't have to: txture's use of flatfiles allows you to do
-whatever you like, so long as you specify the location and file-type of the
-posts you're delivering.
+something I'd write from scratch in Clojure. Similarly, CSS rendering tools like
+Less should be used via existing, separate scripts. The filesystem should be
+used for storing post information: you wanna symlink your posts in from
+somewhere else?  wanna use git to version control your writing? wanna do both? I
+don't give a goddamn and I shouldn't have to: txture's use of flatfiles allows
+you to do whatever you like, so long as you specify the location and file-type
+of the posts you're delivering.
 
 txture offers a very minimal core which can be extended and manipulated by a
 robust plug-in architecture. A great plug-in architecture will allow you to 
