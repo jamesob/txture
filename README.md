@@ -87,10 +87,22 @@ Txture's design philosophy is as follows:
         `-- deltaT
             `-- core_test.clj
 
-## Note
+## Installation
 
-The current `lein` script causes step 4 of the installation to barf, so I've
-included the version of `lein` I use in the repository.
+1. Get Leiningen (Clojure not required)
+2. Get txture
+
+        $ git clone git@github.com:jamesob/txture.git
+
+3. Let ``lein`` gather dependencies.
+
+        $ cd txture && lein deps
+
+4. Run txture
+
+        $ lein run src/txture/core.clj
+
+5. Browse to http://localhost:8080 
 
 ## Usage
 
@@ -110,24 +122,7 @@ included the version of `lein` I use in the repository.
 
    Ensure that there is a blank line between the header information and the
    body, which can be any HTML.
-
-## Installation
-
-1. Get Leiningen (Clojure not required)
-2. Get txture
-
-        $ git clone git@github.com:jamesob/txture.git
-
-3. Let ``lein`` gather dependencies.
-
-        $ cd txture && lein deps
-
-4. Run txture
-
-        $ lein repl src/txture/core.clj
-
-5. Browse to http://localhost:8080 
-
+                   
 ## License
 
 Copyright (c) 2010 jamesob
