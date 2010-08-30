@@ -150,6 +150,7 @@ Copyright (c) 2010 jamesob
 
 ## TODO
 
+  * Hooks less shitty.
   * More bland default theme.
   * Cleaner barfing.
   * Non-blog pages?
