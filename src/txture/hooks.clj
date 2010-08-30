@@ -93,7 +93,6 @@
   (let [all-add-fns (get-fns-by-name *body-end-add-name*)]
     (accum-str-results all-add-fns)))
 
-
 (defn wrap-post-body-HTML
   "Wraps each post's body HTML in more HTML. Functions defined in plugin
   files named `*wrap-post-name*` must (i) have arity 1 and (ii) use

@@ -10,7 +10,7 @@ I wanted these two for sure, but I also wanted modern candy like Markdown
 parsing and Less rendering for CSS. So, I began to write txture.
 
 In the process, I realized that a platform like this could really benefit from
-an excellent plug-in architecture, so I wrote one up and it quickly began
+an excellent plugin architecture, so I wrote one up and it quickly began
 driving the development of txture.
 
 **txture** is readable and easily modified, but it works pleasantly and simply
@@ -20,7 +20,7 @@ yet.
 ## Philosophy
 
 txture boasts a bare Model-View-Controller core reliant on a simple, powerful
-plug-in architecture for all modern goodies.
+plugin architecture for all modern goodies.
 
 txture is shaped according to the Unix philosophy as tightly as a web log
 platform can sanely afford. 
@@ -36,10 +36,10 @@ you to do whatever you like, so long as you specify the location and file
 extentions of the posts you're delivering.
 
 txture offers a very minimal core which can be extended and manipulated by a
-robust plug-in architecture. A great plug-in architecture will allow you to 
+robust plugin architecture. A great plugin architecture will allow you to 
 
   1. easily extend txture to accommodate your likes, and
-  2. allow you to distribute your plug-in to others without too much cursing.
+  2. allow you to distribute your plugin to others without too much cursing.
 
 These two consequences will facilitate txture's longevity and ability to use
 new, hip web swag.
@@ -51,8 +51,8 @@ Txture's design philosophy is as follows:
   2. anything that is not basic to txture is a plugin. This includes features
      like Markdown parsing, LESS rendering, Disqus comments which are included
      within the core of other minimal weblog platforms. This reliance on a
-     plug-in architecture will not only keep the txture core stark, but it
-     will provide numerous examples of how plug-ins are authored.
+     plugin architecture will not only keep the txture core stark, but it
+     will provide numerous examples of how plugins are authored.
 
 ## Architecture
 
@@ -67,7 +67,7 @@ Txture's design philosophy is as follows:
     |       |-- config.clj     <-- you modify this to your liking
     |       |-- core.clj
     |       |-- dates.clj
-    |       |-- hooks.clj      <-- defines plug-in architecture
+    |       |-- hooks.clj      <-- defines plugin architecture
     |       |-- mvc
     |       |   |-- controller.clj
     |       |   |-- model.clj
@@ -75,12 +75,12 @@ Txture's design philosophy is as follows:
     |       |   |   `-- post.clj
     |       |   |-- view.clj
     |       |   `-- views
-    |       `-- plugins       <-- plug-ins are dropped in here and 
+    |       `-- plugins       <-- plugins are dropped in here and 
     |           `-- markdown        automatically detected 
     |               `-- core.clj
     |-- static  
     |   |-- js
-    |   |   |-- render-showdown.js <-- for Markdown plug-in
+    |   |   |-- render-showdown.js <-- for Markdown plugin
     |   |   `-- showdown.js        <-|
     |   `-- stylesheets
     |       |-- main.css
@@ -119,8 +119,9 @@ Txture's design philosophy is as follows:
 
         [Markdown here]
    
-   If you don't like Markdown, the Markdown plug-in can be disabled simply by
-   removing the `src/txture/plugins/markdown` file.
+   If you don't like Markdown, the Markdown plugin can be disabled simply by
+   removing the `src/txture/plugins/markdown` file. This goes for any other
+   plugin.
 
    Ensure that there is a blank line between the header information and the
    body, which can be any HTML.
