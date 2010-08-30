@@ -47,7 +47,7 @@ Txture's design philosophy is as follows:
   1. never duplicate functionality that other, better, and existing tools
      already provide. 
   2. anything that is not basic to txture is a plugin. This includes features
-     like Markdown parsing, CSS rendering, Disqus comments which are included
+     like Markdown parsing, LESS rendering, Disqus comments which are included
      within the core of other minimal weblog platforms. This reliance on a
      plug-in architecture will not only keep the txture core stark, but it
      will provide numerous examples of how plug-ins are authored.
