@@ -17,7 +17,9 @@ hosted.
 
 A few things to do:
   
-  - Learn the [Markdown syntax][Markdown]. It's pretty simple.
+  - Learn the [Markdown syntax][Markdown]. It's pretty simple. If you don't want
+    to learn Markdown, simply remove the plugin by deleting the
+    `src/txture/plugins/markdown` folder.
   - Take a look at `src/txture/config.clj`. It has all kinds of sweet options.
   - Figure out how to install plugins. It'll take all of three seconds.
 

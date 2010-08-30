@@ -47,7 +47,6 @@
   "Returns a function which threads `foo` through the list `fns`."
   [fns]
   (fn [foo] 
-    (println (str "incoming: " foo))
     (if (empty? fns)
       foo ; nothing to do
       (loop [fnlist (rest fns)
