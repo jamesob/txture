@@ -151,12 +151,5 @@ Copyright (c) 2010 jamesob
 
   * More bland default theme.
   * Cleaner barfing.
-  * Markdown parsing.
-  * Plugins?
-    * Comments
-      * Disqus?
-    * Twitter integration
-    * Delicious
   * Non-blog pages?
-  * Pretty printing source.
 

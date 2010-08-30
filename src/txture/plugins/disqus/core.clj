@@ -1,8 +1,9 @@
 (ns txture.plugins.disqus.core)
 
+;; plugin will not function until a shortname is defined.
+;; go register at disqus.
 (def *disqus-short-name* nil)
 
-;; only uncomment once supplying a Disqus short name for your site.
 (def disqus-box
   (if (not (nil? *disqus-short-name*))
     (str "
