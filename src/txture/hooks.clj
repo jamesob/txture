@@ -32,8 +32,6 @@
   [nss]
   (let [pubs (map ns-publics nss)
         only-fns (map vals pubs)]
-    (println (str "pubs" pubs))
-    (println (str "only-fns" only-fns))
     (reduce concat only-fns)))
 
 (defn- get-fns-by-name
@@ -44,10 +42,6 @@
         import-nss (require-nss plugin-nss) ;; only for side-effects
         fns (extract-all-fns plugin-nss)
         patt (re-pattern namestr)]
-    (println plugin-nss)
-    (println patt)
-    (println "all functions: ")
-    (println fns)
     (filter #(re-find patt (str %)) fns)))
 
 (defn- make-thread-fnc
@@ -85,7 +79,6 @@
   in plugin files must not take any arguments."
   []
   (let [all-add-fns (get-fns-by-name *head-add-name*)]
-    (println all-add-fns)
     (accum-str-results all-add-fns)))
 
 (defn append-to-body-end
