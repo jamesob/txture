@@ -4,4 +4,5 @@
                  [org.clojure/clojure-contrib "1.1.0"]
                  [compojure "0.4.0"]
                  [hiccup "0.2.6"]
-                 [ring/ring-jetty-adapter "0.2.3"]])
+                 [ring/ring-jetty-adapter "0.2.3"]]
+  :repl-init-script "src/txture/core.clj")
