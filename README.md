@@ -30,8 +30,8 @@ Less should be used via existing, separate scripts. The filesystem should be
 used for storing post information: you wanna symlink your posts in from
 somewhere else?  wanna use git to version control your writing? wanna do both? I
 don't give a goddamn and I shouldn't have to: txture's use of flatfiles allows
-you to do whatever you like, so long as you specify the location and file-type
-of the posts you're delivering.
+you to do whatever you like, so long as you specify the location and file
+extentions of the posts you're delivering.
 
 txture offers a very minimal core which can be extended and manipulated by a
 robust plug-in architecture. A great plug-in architecture will allow you to 

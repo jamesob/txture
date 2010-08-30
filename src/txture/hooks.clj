@@ -10,6 +10,7 @@
 (def *head-add-name* "append-to-head")
 (def *wrap-post-body-name* "wrap-post-body-HTML")
 (def *wrap-post-name* "wrap-post-HTML")
+(def *body-end-add-name* "append-to-body-end")
 
 ;;; utility functions
 ;;; -----------------
@@ -29,9 +30,11 @@
   "Given a list of namespaces, return the fully qualified name of
   all functions in the each namespace, merged together into one list."
   [nss]
-  (let [pubs (reduce merge (map #(ns-publics %) nss))
-        only-fns (map #(second %) pubs)]
-    only-fns))
+  (let [pubs (map ns-publics nss)
+        only-fns (map vals pubs)]
+    (println (str "pubs" pubs))
+    (println (str "only-fns" only-fns))
+    (reduce concat only-fns)))
 
 (defn- get-fns-by-name
   "Retrieve a list of functions, all with `namestr` somewhere in their names,
@@ -41,6 +44,10 @@
         import-nss (require-nss plugin-nss) ;; only for side-effects
         fns (extract-all-fns plugin-nss)
         patt (re-pattern namestr)]
+    (println plugin-nss)
+    (println patt)
+    (println "all functions: ")
+    (println fns)
     (filter #(re-find patt (str %)) fns)))
 
 (defn- make-thread-fnc
@@ -78,7 +85,14 @@
   in plugin files must not take any arguments."
   []
   (let [all-add-fns (get-fns-by-name *head-add-name*)]
+    (println all-add-fns)
     (accum-str-results all-add-fns)))
+
+(defn append-to-body-end
+  []
+  (let [all-add-fns (get-fns-by-name *body-end-add-name*)]
+    (accum-str-results all-add-fns)))
+
 
 (defn wrap-post-body-HTML
   "Wraps each post's body HTML in more HTML. Functions defined in plugin

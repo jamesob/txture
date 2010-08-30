@@ -13,7 +13,7 @@
   (html (doctype :html5)
     [:html 
      head
-    [:body body]]))
+    [:body body (hooks/append-to-body-end)]]))
 
 ;; fns which return <head>
 ;; ---------------------
