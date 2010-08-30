@@ -6,8 +6,15 @@ I like flat files better than databases for my writing. I also like
 ``meta`` tags and other search-engine luring information to be derived and
 embedded into HTML based on the blog entries I write.
 
-**txture** is based on these priorities. **txture** is readable and easily modified,
-but it (should) work fine out of the box.
+I wanted these two for sure, but I also wanted modern candy like Markdown
+parsing and Less rendering for CSS. So, I began to write txture.
+
+In the process, I realized that a platform like this could really benefit from
+an excellent plug-in architecture, so I wrote one up and it quickly began
+driving the development of txture.
+
+**txture** is readable and easily modified, but it works pleasantly and simply
+out of the box.
 
 ## Philosophy
 
