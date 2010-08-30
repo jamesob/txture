@@ -39,7 +39,8 @@ robust plug-in architecture. A great plug-in architecture will allow you to
   1. easily extend txture to accommodate your likes, and
   2. allow you to distribute your plug-in to others without too much cursing.
 
-These two consequences will facilitate txture's longevity and adaptivity.
+These two consequences will facilitate txture's longevity and ability to use
+new, hip web swag.
 
 Txture's design philosophy is as follows:
 
