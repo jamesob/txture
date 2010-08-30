@@ -18,8 +18,8 @@ out of the box.
 
 ## Philosophy
 
-Txture boasts a bare core reliant on a simple, powerful plug-in architecture for
-all modern goodies.
+Txture boasts a bare Model-View-Controller core reliant on a simple, powerful
+plug-in architecture for all modern goodies.
 
 Txture is shaped according to the Unix philosophy as nearly as a web log
 platform can sanely afford. Comments are probably handled best by Disqus.
